@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 冠狀病毒主蛋白酶的活性中心與抑制劑開發 - 自主學習計畫</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>COVID-19 冠狀病毒主蛋白酶的活性中心與抑制劑開發</h1>
+            <h2>自主學習計畫</h2>
+            <p class="date">2025/9/1 - 2026/1/15</p>
+        </header>
+        
+        <div class="notification hidden" id="notification">
+            <span id="notification-message"></span>
+            <button id="close-notification"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="tabs">
+            <a href="#overview" class="active">計畫概覽</a>
+            <a href="#progress">學習進度</a>
+            <a href="#weekly-goals">每週執行目標</a>
+            <a href="#reflection">心得反思</a>
+            <a href="#references">參考資料</a>
+        </div>
+        
+        <div class="data-controls">
+            <button id="export-data" class="btn btn-primary">
+                <i class="fas fa-download"></i> 匯出進度資料
+            </button>
+            <label for="import-data" class="btn btn-secondary">
+                <i class="fas fa-upload"></i> 匯入進度資料
+                <input type="file" id="import-data" accept=".json" hidden>
+            </label>
+        </div>
+        
+        <!-- 計畫概覽 -->
+        <div id="overview" class="tab-content active">
+            <section>
+                <h3>研究主題選擇原因與目標</h3>
+                <div id="research-reason"></div>
+                
+                <h3>研究目標</h3>
+                <ul id="research-goals"></ul>
+                
+                <h3>預期收穫</h3>
+                <ul id="expected-outcomes"></ul>
+            </section>
+        </div>
+        
+        <!-- 學習進度 -->
+        <div id="progress" class="tab-content">
+            <div class="month-tabs">
+                <ul id="month-tabs-list"></ul>
+            </div>
+            
+            <div id="month-content"></div>
+        </div>
+        
+        <!-- 每週執行目標 -->
+        <div id="weekly-goals" class="tab-content">
+            <div class="table-container">
+                <table id="weekly-goals-table">
+                    <thead>
+                        <tr>
+                            <th>階段</th>
+                            <th>週次</th>
+                            <th>週目標</th>
+                            <th>每日任務內容</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- 心得反思 -->
+        <div id="reflection" class="tab-content">
+            <div id="reflection-content" class="reflection-content"></div>
+        </div>
+        
+        <!-- 參考資料 -->
+        <div id="references" class="tab-content">
+            <div id="references-list" class="references-list"></div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025-2026 自主學習計畫 | 最後更新: <span id="last-updated"></span></p>
+        </footer>
+    </div>
+    
+    <!-- 任務項目模板 -->
+    <template id="task-template">
+        <div class="task-item">
+            <div class="task-content"></div>
+            <div class="task-controls">
+                <div class="task-progress-container">
+                    <label>進度:</label>
+                    <select class="task-progress">
+                        <option value="not_started">未開始</option>
+                        <option value="in_progress">實施中</option>
+                        <option value="completed">已完成</option>
+                    </select>
+                </div>
+                <div class="task-reflection-container">
+                    <label>反思 (20字以內):</label>
+                    <textarea class="task-reflection" maxlength="20" placeholder="輸入您的反思..."></textarea>
+                    <button class="save-reflection btn btn-small">儲存</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
